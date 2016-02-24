@@ -30,6 +30,7 @@ class FieldLists():
     BALANCER = ['id', 'name', 'state', 'port']
     POOL = ['id','name','description','status','load_balance_method',
             'health_monitor_id','service_down_action','slow_ramp_time']
+    POOL_MEMBER = ['id', 'name', 'status', 'port', 'node_id']
 
 
 class ResultSets(object):
@@ -65,6 +66,8 @@ class ResultSets(object):
             return self.parse(output, FieldLists.BALANCER)
         elif isinstance(output, dd.DimensionDataPool):
             return self.parse(output, FieldLists.POOL)
+        elif isinstance(output, dd.DimensionDataPoolMember):
+            return self.parse(output, FieldLists.POOL_MEMBER)
         else:
             return output
 
