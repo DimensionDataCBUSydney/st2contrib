@@ -28,6 +28,8 @@ class FieldLists():
     IP_BLOCK = ['id', 'base_ip', 'size', 'status', 'network_domain']
     MEMBER = ['id', 'ip', 'port', 'balancer']
     BALANCER = ['id', 'name', 'state', 'port']
+    POOL = ['id','name','description','status','load_balance_method',
+            'health_monitor_id','service_down_action','slow_ramp_time']
 
 
 class ResultSets(object):
@@ -61,6 +63,8 @@ class ResultSets(object):
             return self.parse(output, FieldLists.MEMBER)
         elif isinstance(output, lb_base.LoadBalancer):
             return self.parse(output, FieldLists.BALANCER)
+        elif isinstance(output, dd.DimensionDataPool):
+            return self.parse(output, FieldLists.POOL)
         else:
             return output
 
