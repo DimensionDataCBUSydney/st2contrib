@@ -1,0 +1,19 @@
+---
+name: get_firewall_rule_by_name
+runner_type: python-script
+description: Get an firewall rule by name
+enabled: true
+entry_point: get_firewall_rule_by_name.py
+parameters:
+  region:
+    type: string
+    description: The region code
+    default: dd-na
+  network_domain_id:
+    type: string
+    description: network domain id
+    required: true
+  rule_name:
+    type: string
+    description: Firewall Rule Name
+    required: true
