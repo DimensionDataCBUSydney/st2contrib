@@ -1,0 +1,14 @@
+---
+name: get_available_public_ip_address
+runner_type: python-script
+description: List the available public ip address in a network domain
+enabled: true
+entry_point: get_available_public_ip_address.py
+parameters:  
+  region:
+    type: string
+    description: The region code
+    default: dd-na
+  network_domain_id:
+    type: string
+    description: The ID of the network domain
