@@ -34,12 +34,12 @@ class CreateFirewallRuleAction(actions.BaseAction):
             )
         else:
             source = DimensionDataFirewallAddress(
-                any_ip=True,
+                any_ip=False,
                 ip_address=kwargs['source_ip'],
                 port_begin=kwargs['source_port_begin'],
-                port_end=['source_port_end'],
+                port_end=kwargs['source_port_end'],
                 ip_prefix_size=['source_ip_prefix_size']
-            )
+            )            
         if any_destination:
             destination = DimensionDataFirewallAddress(
                 any_ip=True,
@@ -50,7 +50,7 @@ class CreateFirewallRuleAction(actions.BaseAction):
             )
         else:
             destination = DimensionDataFirewallAddress(
-                any_ip=True,
+                any_ip=False,
                 ip_address=kwargs['destination_ip'],
                 port_begin=kwargs['destination_port_begin'],
                 port_end=['destination_port_end'],

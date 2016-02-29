@@ -17,8 +17,8 @@ parameters:
     type: string
     description: The ID of the network domain 
   position:
-    type: integer
-    description: The rule position
+    type: string
+    description: The rule position LAST, FIRST
     required: true
   protocol:
     type: string
