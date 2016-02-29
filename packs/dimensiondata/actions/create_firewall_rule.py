@@ -38,7 +38,7 @@ class CreateFirewallRuleAction(actions.BaseAction):
                 ip_address=kwargs['source_ip'],
                 port_begin=kwargs['source_port_begin'],
                 port_end=kwargs['source_port_end'],
-                ip_prefix_size=['source_ip_prefix_size']
+                ip_prefix_size=kwargs['source_ip_prefix_size']
             )            
         if any_destination:
             destination = DimensionDataFirewallAddress(
@@ -53,8 +53,8 @@ class CreateFirewallRuleAction(actions.BaseAction):
                 any_ip=False,
                 ip_address=kwargs['destination_ip'],
                 port_begin=kwargs['destination_port_begin'],
-                port_end=['destination_port_end'],
-                ip_prefix_size=['destination_ip_prefix_size']
+                port_end=kwargs['destination_port_end'],
+                ip_prefix_size=kwargs['destination_ip_prefix_size']
             )
         # setup the rule
         rule = DimensionDataFirewallRule(
