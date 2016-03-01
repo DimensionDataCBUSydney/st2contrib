@@ -3,12 +3,8 @@ name: create_virtual_listener
 runner_type: python-script
 description: Create virtual listener in the network domain
 enabled: true
-entry_point: run_lb.py
+entry_point: create_virtual_listener.py
 parameters:
-  action:
-    type: string
-    immutable: true
-    default: ex_create_virtual_listener
   region:
     type: string
     description: The region code
@@ -25,7 +21,7 @@ parameters:
     type: string
     description: port
     required: true
-  ex_description:  
+  ex_description:
     type: string
     description: description of the node
     required: true
@@ -36,7 +32,7 @@ parameters:
   pool_id:
     type: string
     description: pool id
-    required: true    
+    required: true
   persistence_profile_id:
     type: string
     description: Persistence profile
@@ -52,7 +48,7 @@ parameters:
   protocol :
     type: string
     description: For STANDARD type, ANY, TCP or UDP for PERFORMANCE_LAYER_4 choice of ANY, TCP, UDP, HTTP
-    required: true    
+    required: true
   connection_limit:
     type: integer
     description: Maximum number of concurrent connections per sec
