@@ -31,6 +31,7 @@ class FieldLists():
     POOL = ['id','name','description','status','load_balance_method',
             'health_monitor_id','service_down_action','slow_ramp_time']
     POOL_MEMBER = ['id', 'name', 'status', 'port', 'node_id']
+    VIRTUAL_LISTENER = ['id', 'name', 'status', 'ip']
 
 
 class ResultSets(object):
@@ -68,6 +69,8 @@ class ResultSets(object):
             return self.parse(output, FieldLists.POOL)
         elif isinstance(output, dd.DimensionDataPoolMember):
             return self.parse(output, FieldLists.POOL_MEMBER)
+        elif isinstance(output, dd.DimensionDataVirtualListener):
+            return self.parse(output, FieldLists.VIRTUAL_LISTENER)
         else:
             return output
 
