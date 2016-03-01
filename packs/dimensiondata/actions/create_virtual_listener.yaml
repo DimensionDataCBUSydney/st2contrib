@@ -1,0 +1,68 @@
+---
+name: create_virtual_listener
+runner_type: python-script
+description: Create virtual listener in the network domain
+enabled: true
+entry_point: run_lb.py
+parameters:
+  action:
+    type: string
+    immutable: true
+    default: ex_create_virtual_listener
+  region:
+    type: string
+    description: The region code
+    default: dd-na
+  network_domain_id:
+    type: string
+    description: network domain id
+    required: true
+  name:
+    type: string
+    description: name of the virtual listener
+    required: true
+  port:
+    type: string
+    description: port
+    required: true
+  ex_description:  
+    type: string
+    description: description of the node
+    required: true
+  listener_ip_address:
+    type: string
+    description: listener ip address
+    required: false
+  pool_id:
+    type: string
+    description: pool id
+    required: true    
+  persistence_profile_id:
+    type: string
+    description: Persistence profile
+    required: false
+  fallback_persistence_profile_id:
+    type: string
+    description: Fallback persistence profile
+    required: false
+  irule_id:
+    type: string
+    description: The iRule to apply
+    required: false
+  protocol :
+    type: string
+    description: For STANDARD type, ANY, TCP or UDP for PERFORMANCE_LAYER_4 choice of ANY, TCP, UDP, HTTP
+    required: true    
+  connection_limit:
+    type: integer
+    description: Maximum number of concurrent connections per sec
+    default: 25000
+  connection_rate_limit:
+    type: integer
+    description: Maximum number of concurrent sessions
+    default: 2000
+  source_port_preservation:
+    type: string
+    description: source port reservation Choice of PRESERVE, PRESERVE_STRICT or CHANGE
+    required: true
+    default: PRESERVE

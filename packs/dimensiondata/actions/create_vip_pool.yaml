@@ -1,0 +1,46 @@
+---
+name: create_vip_pool
+runner_type: python-script
+description: Create pool in the network domain
+enabled: true
+entry_point: run_lb.py
+parameters:
+  action:
+    type: string
+    immutable: true
+    default: ex_create_pool
+  region:
+    type: string
+    description: The region code
+    default: dd-na
+  network_domain_id:
+    type: string
+    description: network domain id
+    required: true
+  name:
+    type: string
+    description: name of the pool
+    required: true
+  balancer_method:
+    type: string
+    description: The algorithm of the balancer, choice of LEAST_CONNECTIONS, ROUND_ROBIN, SHORTEST_RESPONSE, PERSISTENT_IP
+    required: true
+    default: ROUND_ROBIN
+  ex_description:  
+    type: string
+    description: description of the pool
+    required: true
+  health_monitors:
+    type: string
+    description: health monitors
+    required: false
+  service_down_action:
+    type: string
+    description: RESELECT,DROP
+    required: false
+    default: RESELECT
+  slow_ramp_time:
+    type: integer
+    description: slow ramp time
+    required: false
+    default: 30 
