@@ -27,7 +27,7 @@ class FieldLists():
     NAT_RULE = ['id', 'internal_ip', 'external_ip', 'status']
     IP_BLOCK = ['id', 'base_ip', 'size', 'status', 'network_domain']
     MEMBER = ['id', 'ip', 'port', 'balancer']
-    BALANCER = ['id', 'name', 'state', 'port']
+    BALANCER = ['id', 'name', 'state', 'port', 'ip']
     POOL = ['id','name','description','status','load_balance_method',
             'health_monitor_id','service_down_action','slow_ramp_time']
     POOL_MEMBER = ['id', 'name', 'status', 'port', 'node_id']
