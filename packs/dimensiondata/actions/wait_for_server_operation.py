@@ -11,7 +11,7 @@ class WaitForCAASServerOperationAction(actions.BaseAction):
     def run(self, region, id):
         node = self.getNode(region, id)
         if node is not None:
-            while(node.extra['status'].action != 'None'):
+            while node.extra['status'].action:
                 sleep(5)
                 node = self.getNode(region, id)
         else:
