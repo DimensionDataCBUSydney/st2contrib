@@ -15,7 +15,7 @@ parameters:
     default: dd-na
   network_domain_id:
     type: string
-    description: The ID of the network domain 
+    description: The ID of the network domain
   position:
     type: string
     description: The rule position LAST, FIRST
@@ -46,11 +46,11 @@ parameters:
     type: string
     description: The IP of the source
   source_port_begin:
-    type: integer
+    type: string
     required: false
     description: The source port, leave blank for any
   source_port_end:
-    type: integer
+    type: string
     required: false
     description: The source port end, leave blank for any or a specific port
   source_ip_prefix_size:
@@ -65,11 +65,11 @@ parameters:
     type: string
     description: The IP of the destination
   destination_port_begin:
-    type: integer
+    type: string
     required: false
     description: The destination port, leave blank for any
   destination_port_end:
-    type: integer
+    type: string
     required: false
     description: The destination port end, leave blank for any or a specific port
   destination_ip_prefix_size:
