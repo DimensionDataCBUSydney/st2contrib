@@ -17,6 +17,8 @@ class CreateVirtualListenerAction(BaseAction):
         driver.network_domain_id = network_domain_id
         pool = driver.ex_get_pool(pool_id)
         available_persistence_profiles = driver.ex_get_default_persistence_profiles(network_domain_id)
+        persistence_profiles = None
+        fallback_persistence_profiles = None
         for profile in available_persistence_profiles:
             if profile.name.lower() == ("ccdefault." + persistence_profile.strip().lower()):
                 persistence_profiles = profile
