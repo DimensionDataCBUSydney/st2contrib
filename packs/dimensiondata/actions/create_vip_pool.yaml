@@ -5,10 +5,6 @@ description: Create pool in the network domain
 enabled: true
 entry_point: create_vip_pool.py
 parameters:
-  action:
-    type: string
-    immutable: true
-    default: ex_create_pool
   region:
     type: string
     description: The region code
