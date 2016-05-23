@@ -3,7 +3,7 @@ name: create_vip_pool
 runner_type: python-script
 description: Create pool in the network domain
 enabled: true
-entry_point: run_lb.py
+entry_point: create_vip_pool.py
 parameters:
   action:
     type: string
@@ -26,14 +26,15 @@ parameters:
     description: The algorithm of the balancer, choice of LEAST_CONNECTIONS, ROUND_ROBIN, SHORTEST_RESPONSE, PERSISTENT_IP
     required: true
     default: ROUND_ROBIN
-  ex_description:  
+  ex_description:
     type: string
     description: description of the pool
     required: true
   health_monitors:
     type: string
-    description: health monitors
+    description: health monitors choice of Http, Https, Icmp, Tcp, TcpHalfOpen, Udp
     required: false
+    default: Tcp
   service_down_action:
     type: string
     description: RESELECT,DROP
@@ -43,4 +44,4 @@ parameters:
     type: integer
     description: slow ramp time
     required: false
-    default: 30 
+    default: 30

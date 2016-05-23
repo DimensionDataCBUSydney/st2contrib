@@ -33,13 +33,13 @@ parameters:
     type: string
     description: pool id
     required: true
-  persistence_profile_id:
+  persistence_profile:
     type: string
-    description: Persistence profile
+    description: Persistence profile (SourceAddress, DestinationAddress)
     required: false
-  fallback_persistence_profile_id:
+  fallback_persistence_profile:
     type: string
-    description: Fallback persistence profile
+    description: Fallback persistence profile (SourceAddress, DestinationAddress)
     required: false
   irule_id:
     type: string
