@@ -15,7 +15,7 @@ class CreatePoolAction(BaseAction):
         monitors = list()
         for monitor in health_monitors.split(","):
             for available_monitor in health_monitors_list:
-                if available_monitor.name.lower() == ("ccdefault." + monitor.lower()):
+                if available_monitor.name.lower() == ("ccdefault." + monitor.lower().strip()):
                     monitors.append(available_monitor)
         record = driver.ex_create_pool(network_domain_id = network_domain_id,
                                        name = name,
